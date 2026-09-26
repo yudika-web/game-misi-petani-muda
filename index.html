@@ -2276,11 +2276,11 @@ All bitmap assets embedded as base64 WebP; regenerated pixel atlases in V10.
   <div id="fullscreenChoice" class="fullscreen-choice" role="dialog" aria-modal="true" aria-labelledby="fullscreenChoiceTitle" hidden>
     <div class="fullscreen-choice-card">
       <p class="eyebrow">Pilihan Tampilan</p>
-      <h2 id="fullscreenChoiceTitle">Main dalam fullscreen?</h2>
-      <p>Pilih mode tampilan terlebih dahulu. Setelah itu layar “Sentuh untuk Mulai” akan muncul.</p>
+      <h2 id="fullscreenChoiceTitle">Mau bermain di mana?</h2>
+      <p>Pilih tata letak yang nyaman. Kamu bisa menggantinya lewat menu Jeda.</p><label class="display-fullscreen"><input id="displayFullscreen" type="checkbox"> Gunakan layar penuh (opsional)</label>
       <div class="fullscreen-choice-actions">
-        <button id="chooseFullscreen" class="primary" type="button">⛶ Fullscreen</button>
-        <button id="chooseWindowed" type="button">Tidak Fullscreen</button>
+        <button id="chooseFullscreen" class="primary" type="button">💻 Laptop · Landscape</button>
+        <button id="chooseWindowed" type="button">📱 HP · Potret</button>
       </div>
       <div id="fullscreenChoiceStatus" class="fullscreen-choice-status" role="status" aria-live="polite"></div>
     </div>
@@ -4305,8 +4305,8 @@ const viewport=document.getElementById('viewport'), worldEl=document.getElementB
     if(!request){if(fullscreenChoiceStatus)fullscreenChoiceStatus.textContent='Fullscreen tidak didukung browser ini. Melanjutkan tanpa fullscreen.';setTimeout(v13FinishFullscreenChoice,700);return}
     try{const result=request.call(root,{navigationUI:'hide'});if(result&&typeof result.then==='function')await result;if(fullscreenChoiceStatus)fullscreenChoiceStatus.textContent='Fullscreen aktif.';v13FinishFullscreenChoice()}catch(err){if(fullscreenChoiceStatus)fullscreenChoiceStatus.textContent='Fullscreen tidak diizinkan. Melanjutkan tanpa fullscreen.';setTimeout(v13FinishFullscreenChoice,700)}
   }
-  chooseFullscreen?.addEventListener('click',event=>{event.stopPropagation();v13ChooseDisplayMode(true)});
-  chooseWindowed?.addEventListener('click',event=>{event.stopPropagation();v13ChooseDisplayMode(false)});
+  chooseFullscreen?.addEventListener('click',event=>{event.stopPropagation();window.MPM_DISPLAY.select('landscape');v13ChooseDisplayMode(document.getElementById('displayFullscreen').checked)});
+  chooseWindowed?.addEventListener('click',event=>{event.stopPropagation();window.MPM_DISPLAY.select('portrait');v13ChooseDisplayMode(document.getElementById('displayFullscreen').checked)});
   fullscreenChoice?.addEventListener('pointerdown',event=>event.stopPropagation());
   fullscreenChoice?.addEventListener('click',event=>event.stopPropagation());
   function leaveSplash(event){
@@ -12182,5 +12182,7 @@ if(typeof v13RefreshPlayerIdentity!=='undefined'){
 })()
 </script>
 
+<link rel="stylesheet" href="display-modes.css">
+<script src="display-modes.js"></script>
 </body>
 </html>

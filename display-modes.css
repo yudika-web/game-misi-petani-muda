@@ -1,0 +1,101 @@
+/* V11 device layouts. Loaded last to resolve conflicting legacy UI patches. */
+.display-fullscreen{display:flex;align-items:center;gap:10px;margin:18px 0;font-size:14px;text-align:left}
+.display-fullscreen input{width:22px;height:22px;accent-color:#315d40}
+#fullscreenChoice .fullscreen-choice-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#fullscreenChoice button{min-height:68px;white-space:normal;line-height:1.4;font-size:16px}
+.display-settings{padding:12px;border:1px solid #9eab7c;border-radius:8px;background:#fff8e8}
+.display-settings>div{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.display-settings button{min-height:44px;flex:1}
+.display-settings button[aria-pressed=true]{background:#315d40;color:#fff8e8}
+.display-settings small{font-size:12px}
+html[data-layout] .pause-card{max-height:calc(var(--app-height,100dvh) - 24px);overflow:auto;overscroll-behavior:contain}
+html[data-layout] button{touch-action:manipulation}
+html[data-layout] .v52-dir{touch-action:none}
+html[data-layout] .screen[data-screen="Dunia / HUD"]{height:var(--app-height,100dvh);min-height:0}
+html[data-layout] .world-shell{height:100%!important;min-height:0!important}
+html[data-layout] .world-viewport{touch-action:none}
+html[data-layout=landscape] .screen[data-screen="Dunia / HUD"] .v8-dock{height:90px;min-height:90px;grid-template-columns:86px minmax(0,1fr) 70px!important}
+html[data-layout=landscape] .screen[data-screen="Dunia / HUD"] .v8-dock #joystick{width:82px!important;height:82px!important;min-width:82px!important}
+html[data-layout=landscape] .screen[data-screen="Dunia / HUD"] .v8-dock #actionButton{width:62px!important;height:62px!important}
+html[data-layout=landscape] .screen[data-screen="Dunia / HUD"] .v8-dock #interactionPrompt{bottom:96px!important}
+html[data-layout=portrait]{overflow:hidden}
+html[data-layout=portrait] body{margin:0;overflow:hidden;overscroll-behavior:none}
+html[data-layout=portrait] .screen{max-width:100%;height:var(--app-height,100dvh);padding:12px!important;overflow-y:auto;overflow-x:hidden}
+html[data-layout=portrait] .screen:not([data-screen="Dunia / HUD"]) .shell{height:auto!important;min-height:100%!important;max-width:600px;margin:auto}
+html[data-layout=portrait] .v3-tutorial-grid{grid-template-columns:1fr!important}
+html[data-layout=portrait] .v3-tutorial-card{min-height:120px;padding:14px;grid-template-columns:72px 1fr;gap:12px}
+html[data-layout=portrait] .v3-section-head{padding:16px;display:block}
+html[data-layout=portrait] .v3-section-head h2{font-size:24px!important}
+html[data-layout=portrait] .v3-tutorial-footer,html[data-layout=portrait] .v3-setup-footer{display:flex;flex-wrap:wrap;gap:12px;padding:12px}
+html[data-layout=portrait] .v3-setup-main{width:100%;padding:0!important;grid-template-columns:minmax(0,1fr)!important}
+html[data-layout=portrait] input,html[data-layout=portrait] select,html[data-layout=portrait] textarea{font-size:16px!important;max-width:100%}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"]{padding:max(4px,env(safe-area-inset-top)) max(4px,env(safe-area-inset-right)) max(4px,env(safe-area-inset-bottom)) max(4px,env(safe-area-inset-left))!important;overflow:hidden}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .world-shell{width:100%;max-width:600px;grid-template-rows:102px 30px minmax(0,1fr) 194px!important;gap:4px!important;contain:none}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .mission-hud{height:102px!important;min-height:0!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:52px 46px!important;gap:4px!important;overflow:visible;contain:none}
+html[data-layout=portrait] .mission-chip{width:100%!important;max-width:none!important;height:52px!important;min-width:0!important}
+html[data-layout=portrait] .mission-chip-toggle{width:100%;height:52px!important;padding:5px 10px!important;grid-template-rows:22px 18px!important}
+html[data-layout=portrait] #hudMissionLabel{font-size:14px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html[data-layout=portrait] #missionProgressText{font-size:12px!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .hud-actions{height:46px!important;width:100%;overflow-x:auto!important;overflow-y:hidden!important;gap:5px!important;justify-content:flex-start!important;scrollbar-width:none}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .hud-actions>button,
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .hud-actions>.m3-hud{position:static!important;flex:0 0 auto!important;min-width:64px!important;width:auto!important;height:44px!important;min-height:44px!important;padding:4px 9px!important;font-size:12px!important;margin:0!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .hud-actions>.m9-btn::after{display:none}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .hud-actions>.m3-hud{padding:0!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] #m3OpenBtn{font-size:12px!important;height:44px!important;min-height:44px!important;padding:4px 10px!important}
+html[data-layout=portrait] .hud-actions .score-panel{display:none!important}
+html[data-layout=portrait] .hud-actions #pauseButton{order:-4!important;min-width:48px!important}
+html[data-layout=portrait] .v8-world-status{height:30px;min-width:0;font-size:11px;overflow:hidden;padding:0 6px;gap:5px}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] #viewport{grid-row:3!important;min-height:0!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .v8-dock{position:relative!important;grid-row:4!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;transform:none!important;width:100%!important;height:194px!important;min-height:0!important;display:grid!important;grid-template-columns:132px minmax(0,1fr) 72px!important;grid-template-rows:48px 132px!important;gap:4px 8px!important;padding:4px 8px!important;background:#f1ecd8!important;contain:none;pointer-events:auto}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .v8-dock .quick-inventory{grid-row:1!important;grid-column:1/-1!important;justify-content:flex-start!important;gap:6px!important;overflow-x:auto!important;touch-action:pan-x}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .v8-dock .quick-slot{flex:0 0 54px!important;width:54px!important;min-width:54px!important;height:48px!important;min-height:48px!important;font-size:10px!important;grid-template-rows:28px 14px!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .v8-dock #joystick{grid-row:2!important;grid-column:1!important;width:132px!important;min-width:132px!important;height:132px!important;min-height:132px!important;overflow:visible!important}
+html[data-layout=portrait] .v52-dpad{width:132px;height:132px;grid-template-columns:repeat(3,44px);grid-template-rows:repeat(3,44px)}
+html[data-layout=portrait] .v52-dir{width:44px!important;min-width:44px!important;height:44px!important;min-height:44px!important;font-size:20px!important;border-radius:10px!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .v8-dock #actionButton{grid-row:2!important;grid-column:3!important;width:68px!important;min-width:68px!important;height:68px!important;min-height:68px!important;font-size:14px!important;border-radius:50%!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .v8-dock #actionButton::after{content:'Sentuh';font-size:10px!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .v8-dock #interactionPrompt{position:static!important;grid-column:2!important;grid-row:2!important;transform:none!important;width:100%!important;max-width:100%!important;min-width:0!important;align-self:center;white-space:normal!important;font-size:11px!important;padding:5px!important;box-shadow:none!important;overflow-wrap:anywhere}
+html[data-layout=portrait] #interactionPrompt .prompt-key{display:none}
+html[data-layout=portrait] .v10-objective{display:none!important}
+html[data-layout=portrait] .v10-resources{top:6px!important;right:6px!important;flex-direction:row!important;gap:4px!important}
+html[data-layout=portrait] .v10-resource{padding:3px!important;font-size:11px!important}
+html[data-layout=portrait] .v10-resources .v8-pill{min-height:36px!important;padding:3px 6px;font-size:11px}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] #viewport>.v10-minimap-button{left:6px!important;bottom:6px!important;width:76px!important;height:44px!important;min-height:44px!important;padding:4px!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] #viewport>.v10-minimap-button canvas{display:none!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] #viewport>.v10-minimap-button span{font-size:10px!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] #v4Picker{bottom:8px!important;max-height:75%!important;max-width:calc(100% - 16px)!important;overflow:auto!important}
+html[data-layout=portrait] .world-controls-hint{display:none!important}
+html[data-layout=portrait] .hint-bar{max-width:calc(100% - 16px);font-size:12px}
+/* Every activity keeps a reachable close button and scrollable content. */
+html[data-layout=portrait] :is(.v8-modal,.m2-mission-overlay,.m3-overlay,.m5-diagnosis-overlay,.m6-overlay,.m7-overlay,.m8-overlay,.m9-overlay,.v10-map,.pause-overlay,.confirm-overlay){padding:max(6px,env(safe-area-inset-top)) 6px max(6px,env(safe-area-inset-bottom))!important;max-height:var(--app-height,100dvh);overflow:auto;overscroll-behavior:contain}
+html[data-layout=portrait] :is(.v8-book,.m2-mission-book,.m3-card,.m5-diagnosis-card,.m6-card,.m7-card,.m8-panel,.m9-card,.v10-map-card,.pause-card,.confirm-card){width:100%!important;max-width:600px!important;min-width:0!important;max-height:calc(var(--app-height,100dvh) - 16px)!important;overflow:auto;box-sizing:border-box}
+html[data-layout=portrait] :is(.v8-book,.m2-mission-book){height:calc(var(--app-height,100dvh) - 16px)!important;overflow:hidden}
+html[data-layout=portrait] :is(.v8-body,.m2-body){min-height:0;overflow:auto;overscroll-behavior:contain}
+html[data-layout=portrait] :is(.v8-tabs,.m2-tabs,.m6-tabs,.m7-tabs,.m8-tabs,.m9-tabs){display:flex!important;flex-wrap:nowrap!important;overflow-x:auto;min-width:0;max-width:100%;padding:4px;gap:5px}
+html[data-layout=portrait] :is(.v8-tabs,.m2-tabs,.m6-tabs,.m7-tabs,.m8-tabs,.m9-tabs)>button{flex:0 0 auto;min-height:44px!important;font-size:12px!important}
+html[data-layout=portrait] :is(.m3-grid,.m6-grid,.m7-grid,.m8-grid,.m9-grid,.m9-workspace,.v8-grid,.t9-two-col){grid-template-columns:minmax(0,1fr)!important}
+html[data-layout=portrait] :is(.v8-book,.m2-mission-book,.m3-card,.m6-card,.m7-card,.m8-panel,.m9-card) button{min-height:44px}
+html[data-layout=portrait] :is(.m8-panel,.m9-card,.m7-card,.m6-card)>.spread{align-items:flex-start;gap:10px}
+html[data-layout=portrait] :is(.m8-panel,.m9-card,.m7-card,.m6-card)>.spread>div{min-width:0}
+html[data-layout=portrait] :is(.m8-panel,.m9-card,.m7-card,.m6-card)>.spread>button{flex-shrink:0}
+html[data-layout=portrait] .v10-map canvas{width:100%!important;height:auto!important}
+html[data-layout=portrait] #dialogOverlay .v12-dialog-box{max-height:calc(var(--app-height,100dvh) - 20px);overflow:auto}
+html[data-layout=portrait] .fullscreen-choice-card{max-width:100%;padding:22px}
+@media(max-width:420px){#fullscreenChoice .fullscreen-choice-actions{grid-template-columns:1fr}}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .hud-actions{max-width:100%!important}
+html[data-layout=portrait] .m2-book-tabs{display:flex;overflow-x:auto;gap:5px;min-width:0}
+html[data-layout=portrait] .m2-book-tabs button{flex:0 0 108px}
+html[data-layout=portrait] .m2-book-body{min-height:0;overflow:auto}
+html[data-layout=portrait] .m2-chapter-card{max-height:calc(var(--app-height,100dvh) - 20px);overflow:auto}
+html[data-layout=portrait] #v2Overlay{padding:6px!important;height:var(--app-height,100dvh);box-sizing:border-box}
+html[data-layout=portrait] .v2-shell{width:100%!important;max-width:600px;height:100%!important;max-height:100%!important}
+html[data-layout=portrait] .v2-tabs{display:flex;overflow-x:auto;flex-wrap:nowrap}
+html[data-layout=portrait] .v2-tabs button{flex:0 0 auto;min-height:44px!important;font-size:12px!important}
+html[data-layout=portrait] .v2-grid{grid-template-columns:minmax(0,1fr)!important}
+html[data-layout=portrait] .v2-body button{min-height:44px!important}
+html[data-layout=portrait] #interactionPrompt .prompt-copy::before{content:''!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] #m2MissionTracker{top:48px;right:6px;max-height:35%;width:min(230px,calc(100% - 12px));overflow-y:auto;pointer-events:auto;overscroll-behavior:contain}
+html[data-layout=portrait] .v2-hud-meta{display:none!important}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .hud-actions{scrollbar-width:thin!important;scrollbar-color:#668252 #e7dec4}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .hud-actions::-webkit-scrollbar{display:block;height:3px}
+html[data-layout=portrait] .screen[data-screen="Dunia / HUD"] .hud-actions::-webkit-scrollbar-thumb{background:#668252;border-radius:3px}
